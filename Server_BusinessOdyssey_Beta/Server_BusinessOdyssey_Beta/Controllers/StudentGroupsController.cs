@@ -24,6 +24,9 @@ namespace Server_BusinessOdyssey_Beta.Controllers
         [HttpGet]
         public IEnumerable<StudentGroup> GetStudentGroup()
         {
+
+            //_context.StudentGroup.Find( => );
+
             return _context.StudentGroup;
         }
 
@@ -95,7 +98,7 @@ namespace Server_BusinessOdyssey_Beta.Controllers
             {
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateException)
+            catch (DbUpdateException dbEx)
             {
                 if (StudentGroupExists(studentGroup.SGroupName))
                 {

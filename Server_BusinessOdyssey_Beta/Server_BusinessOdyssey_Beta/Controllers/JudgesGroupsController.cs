@@ -37,6 +37,7 @@ namespace Server_BusinessOdyssey_Beta.Controllers
             }
 
             var judgesGroup = await _context.JudgesGroup.SingleOrDefaultAsync(m => m.JGroupName == id);
+            //string password = judgesGroup.JGroupKey;
 
             if (judgesGroup == null)
             {
